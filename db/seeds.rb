@@ -37,3 +37,13 @@ if Post.count == 0
                   user_id: 2
               })
 end
+if UserFollower.count == 0
+  UserFollower.create({
+                          user_id: 1,
+                          follower_id: 2
+                      })
+  UserFollower.create({
+                          user_id: 2,
+                          follower_id: 1
+                      })
+end

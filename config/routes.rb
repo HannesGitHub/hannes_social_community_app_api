@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       scope 'me' do
         get 'followers', to: 'users#followers'
         get 'following', to: 'users#following'
+        get 'news_feed', to: 'users#news_feed'
         get 'follow/:user_id', to: 'users#follow'
         get 'unfollow/:user_id', to: 'users#unfollow'
       end

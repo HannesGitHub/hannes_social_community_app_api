@@ -29,6 +29,10 @@ class Api::V1::UsersController < Api::V1::BaseApiController
     render_unprocessable('User not deleted', user)
   end
 
+  def news_feed
+    @user.following.posts
+  end
+
   def followers
     render_success('followers', @user.followers.as_json(:include => { :user => {}}))
   end
