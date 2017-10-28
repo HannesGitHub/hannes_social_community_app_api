@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :posts
   scope :active, -> { where(is_active: true) }
 
-  validates :name, :surname, :username, :password, presence: true
+  validates :name, :username, :password, presence: true
   before_create :generate_auth_token
 
   has_many :following, foreign_key: 'user_id', class_name: 'UserFollower'
