@@ -8,6 +8,12 @@ Rails.application.routes.draw do
     namespace 'v1' do
       resources :posts
       resources :users
+      scope 'me' do
+        get 'followers', to: 'users#followers'
+        get 'following', to: 'users#following'
+        get 'follow/:user_id', to: 'users#follow'
+        get 'unfollow/:user_id', to: 'users#unfollow'
+      end
     end
   end
 

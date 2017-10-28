@@ -7,8 +7,8 @@ class User < ApplicationRecord
   validates :name, :surname, :username, :password, presence: true
   before_create :generate_auth_token
 
-  has_many :following, foreign_key: 'user_id', class_name: "UserFollower"
-  has_many :followers, foreign_key: 'follower_id', class_name: "UserFollower"
+  has_many :following, foreign_key: 'user_id', class_name: 'UserFollower'
+  has_many :followers, foreign_key: 'follower_id', class_name: 'UserFollower'
 
   has_secure_password
 
