@@ -8,18 +8,33 @@
 
 if User.count == 0
   User.create({
-                  name: 'Hannes',
-                  surname: 'van Tonder',
+                  name: 'Test 1',
+                  surname: 'Test 1 surname',
                   is_active: true,
-                  username: 'hannes@bitcube.co.za',
+                  username: 'test1@bitcube.co.za',
                   password: 'P@ssw0rd'
               })
 
   User.create({
-                  name: 'Jimmy ',
-                  surname: 'van Kimmel',
+                  name: 'Test 2 ',
+                  surname: 'Test 2 surname',
                   is_active: true,
-                  username: 'jimmy@bitcube.co.za',
+                  username: 'test2@bitcube.co.za',
+                  password: 'P@ssw0rd'
+              })
+  User.create({
+                  name: 'Test 3',
+                  surname: 'Test 3 surname',
+                  is_active: true,
+                  username: 'test3@bitcube.co.za',
+                  password: 'P@ssw0rd'
+              })
+
+  User.create({
+                  name: 'Test 4',
+                  surname: 'Test 4 surname',
+                  is_active: true,
+                  username: 'test4@bitcube.co.za',
                   password: 'P@ssw0rd'
               })
 end
@@ -36,6 +51,42 @@ if Post.count == 0
                   is_active: true,
                   user_id: 2
               })
+  Post.create({
+                  title: 'Post 3',
+                  message: 'Post 3 message',
+                  is_active: true,
+                  user_id: 1
+              })
+  Post.create({
+                  title: 'Post 4',
+                  message: 'Post 4 message',
+                  is_active: true,
+                  user_id: 2
+              })
+  Post.create({
+                  title: 'Post 5',
+                  message: 'Post 5 message',
+                  is_active: true,
+                  user_id: 3
+              })
+  Post.create({
+                  title: 'Post 6',
+                  message: 'Post 6 message',
+                  is_active: true,
+                  user_id: 4
+              })
+  Post.create({
+                  title: 'Post 7',
+                  message: 'Post 7 message',
+                  is_active: true,
+                  user_id: 3
+              })
+  Post.create({
+                  title: 'Post 8',
+                  message: 'Post 8 message',
+                  is_active: true,
+                  user_id: 4
+              })
 end
 if UserFollower.count == 0
   UserFollower.create({
@@ -44,6 +95,22 @@ if UserFollower.count == 0
                       })
   UserFollower.create({
                           user_id: 2,
+                          follower_id: 1
+                      })
+  UserFollower.create({
+                          user_id: 1,
+                          follower_id: 3
+                      })
+  UserFollower.create({
+                          user_id: 3,
+                          follower_id: 1
+                      })
+  UserFollower.create({
+                          user_id: 1,
+                          follower_id: 4
+                      })
+  UserFollower.create({
+                          user_id: 4,
                           follower_id: 1
                       })
 end
