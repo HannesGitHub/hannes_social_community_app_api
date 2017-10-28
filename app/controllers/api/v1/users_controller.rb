@@ -30,7 +30,7 @@ class Api::V1::UsersController < Api::V1::BaseApiController
   end
 
   def news_feed
-    @user.following.posts
+    render_success('newsfeed', @user.following.map{|following| following.user.posts.map{|posts| posts.attributes}}.flatten.sort_by!{|hash| hash[:created_at]})
   end
 
   def followers
