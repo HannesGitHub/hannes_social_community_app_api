@@ -46,7 +46,7 @@ class Api::V1::UsersController < Api::V1::BaseApiController
     render_bad_request(generate_message('missing_param', missing_param)) and return if missing_param.present?
 
     user_follower =  UserFollower.find_by(user_id: @user.id, follower_id: params[:user_id])
-    user_follower.destroy
+    user_follower.destroy if user_follower.present?
 
     user_follower =  UserFollower.new(user_id: @user.id, follower_id: params[:user_id])
     if user_follower.valid?
