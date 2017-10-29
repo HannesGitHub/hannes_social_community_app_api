@@ -34,9 +34,9 @@ class Api::V1::UsersController < Api::V1::BaseApiController
     following_users = @user.following
     following_users.each do |fusr|
       posts = fusr.follower.posts
-      posts.map{|p| data << p}
+      posts.map{|p| data << p.attributes.merge({username: p.user.name})}
     end
-    data.sort_by! {|post| post.created_at }.reverse
+    @user.posts.map{|p| data << p.attributes.merge({username: 'Me'})}
     render_success('newsfeed', data: data)
   end
 
