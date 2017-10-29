@@ -109,8 +109,4 @@ if UserFollower.count == 0
                           user_id: 1,
                           follower_id: 4
                       })
-  # UserFollower.create({
-  #                         user_id: 4,
-  #                         follower_id: 1
-  #                     })
 end
