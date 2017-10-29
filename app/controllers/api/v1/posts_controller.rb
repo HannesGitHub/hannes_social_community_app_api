@@ -12,6 +12,7 @@ class Api::V1::PostsController < Api::V1::BaseApiController
 
   def create
     post = Post.new(post_params)
+    post.user_id = @user.id
     render_success('Post saved', post) and return if post.save
     render_unprocessable('Post not saved', post.errors)
   end
